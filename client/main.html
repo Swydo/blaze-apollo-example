@@ -1,0 +1,26 @@
+<head>
+  <title>Blaze-Apollo example</title>
+</head>
+
+<body>
+  <h1>Like your Star Wars character!</h1>
+  {{> peopleList}}
+</body>
+
+<template name="peopleList">
+  {{#if queriesReady}}
+  <ul>
+    {{#each person in people}}
+      {{> personItem person=person}}
+    {{/each}}
+  </ul>
+  {{else}}
+    <p>Loading...</p>
+  {{/if}}
+</template>
+
+<template name="personItem">
+  <li>
+    <h4>{{person.name}} ({{person.likes}} likes)</h4>
+  </li>
+</template>

@@ -1,0 +1,35 @@
+{
+  "name": "blaze-apollo-example",
+  "version": "0.0.1",
+  "private": true,
+  "description": "An example showing the Blaze integration with Apollo",
+  "scripts": {
+    "start": "meteor run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Swydo/blaze-apollo-example.git"
+  },
+  "keywords": [
+    "blaze",
+    "apollo",
+    "graphql",
+    "meteor"
+  ],
+  "author": "Michiel ter Reehorst",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Swydo/blaze-apollo-example/issues"
+  },
+  "homepage": "https://github.com/Swydo/blaze-apollo-example#readme",
+  "dependencies": {
+    "apollo-client": "^0.4.20",
+    "apollo-server": "^0.3.2",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "graphql": "^0.7.1",
+    "graphql-tag": "^0.1.14",
+    "graphql-tools": "^0.7.2",
+    "swapi-schema": "0.0.2"
+  }
+}
