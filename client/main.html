@@ -3,24 +3,25 @@
 </head>
 
 <body>
-  <h1>Like your Star Wars character!</h1>
-  {{> peopleList}}
+  <div class="container">
+    <div class="row">
+      {{> peopleList}}
+    </div>
+  </div>
 </body>
 
 <template name="peopleList">
   {{#if queriesReady}}
-  <ul>
+  <div class="collection">
     {{#each person in people}}
       {{> personItem person=person}}
     {{/each}}
-  </ul>
+  </div>
   {{else}}
     <p>Loading...</p>
   {{/if}}
 </template>
 
 <template name="personItem">
-  <li>
-    <h4>{{person.name}} ({{person.likes}} likes)</h4>
-  </li>
+  <a class="collection-item person-item">{{person.name}} <span class="new badge" data-badge-caption="likes">{{person.likes}}</span></a>
 </template>

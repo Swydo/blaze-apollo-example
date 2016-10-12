@@ -20,3 +20,5 @@ shell-server@0.2.1            # Server-side component of the `meteor shell` comm
 
 apollo
 swydo:blaze-apollo
+fourseven:scss
+materialize:materialize
