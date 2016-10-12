@@ -31,7 +31,6 @@
     "graphql-tag": "^0.1.14",
     "graphql-tools": "^0.7.2",
     "request": "^2.75.0",
-    "request-promise-native": "^1.0.3",
-    "swapi-schema": "0.0.2"
+    "request-promise-native": "^1.0.3"
   }
 }
