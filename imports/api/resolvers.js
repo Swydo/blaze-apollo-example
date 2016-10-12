@@ -1,7 +1,5 @@
-import rp from 'request-promise-native';
 import { Likes } from '../collections';
-
-const peopleUrl = 'http://swapi.co/api/people/';
+import { swapiLoader, peopleUrl } from './swapi-loader';
 
 export const resolvers = {
   Person: {
@@ -11,15 +9,14 @@ export const resolvers = {
   },
 
   RootQuery: {
-    person: (root, { id }) => rp({ uri: id, json: true }),
-    people: (root) => rp({ uri: peopleUrl, json: true })
-                        .then(({ results }) => results)
+    person: (root, { id }) => swapiLoader.load(id),
+    people: (root) => swapiLoader.load(peopleUrl).then(({ results }) => results)
   },
 
   Mutation: {
     likePerson: (root, { id }) => {
       Likes.insert({ personId: id });
-      return rp({ uri: id, json: true });
+      return swapiLoader.load(id);
     }
   }
 };
