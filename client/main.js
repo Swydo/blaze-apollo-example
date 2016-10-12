@@ -25,14 +25,14 @@ Template.personItem.events({
     client.mutate({
       mutation: PERSON_LIKE_MUTATION,
       variables: { id: _id },
-      // optimisticResponse: {
-      //   __typename: 'Mutation',
-      //   likePerson: {
-      //     __typename: 'Person',
-      //     _id,
-      //     likes: likes + 1
-      //   },
-      // },
+      optimisticResponse: {
+        __typename: 'Mutation',
+        likePerson: {
+          __typename: 'Person',
+          _id,
+          likes: likes + 1
+        },
+      },
     });
   }
 });
