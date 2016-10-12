@@ -5,7 +5,14 @@ export const resolvers = {
   Person: {
     _id: ({ url }) => url,
     name: ({ name }) => name,
-    likes: ({ url }) => Likes.find({ personId: url }).count()
+    likes: ({ url }) => Likes.find({ personId: url }).count(),
+    films: ({ films }) => swapiLoader.loadMany(films)
+  },
+
+  Film: {
+    _id: ({ url }) => url,
+    title: ({ title }) => title,
+    people: ({ characters }) => swapiLoader.loadMany(characters)
   },
 
   RootQuery: {

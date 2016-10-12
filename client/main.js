@@ -19,7 +19,9 @@ Template.peopleList.helpers({
 });
 
 Template.personItem.events({
-  'click'() {
+  'click .badge'(e) {
+    e.stopPropagation();
+
     const { _id, likes } = this.person;
 
     client.mutate({

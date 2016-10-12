@@ -6,6 +6,9 @@ query people {
     _id
     name
     likes
+    films {
+      _id
+    }
   }
 }
 `;

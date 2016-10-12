@@ -2,7 +2,14 @@ export const typeDefs = [`
   type Person {
     _id: ID!
     name: String!
+    films: [Film]
     likes: Int
+  }
+
+  type Film {
+    _id: ID!
+    title: String!
+    people: [Person]
   }
 
   type RootQuery {
