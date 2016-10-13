@@ -17,7 +17,7 @@ export const resolvers = {
 
   RootQuery: {
     person: (root, { id }) => swapiLoader.load(id),
-    people: (root) => swapiLoader.load(peopleUrl).then(({ results }) => results)
+    people: () => swapiLoader.load(peopleUrl),
   },
 
   Mutation: {
