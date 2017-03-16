@@ -1,6 +1,14 @@
 import ApolloClient from 'apollo-client';
-import { meteorClientConfig } from 'meteor/apollo';
+import { DDPNetworkInterface } from 'meteor/swydo:ddp-apollo';
 
-const config = meteorClientConfig();
+export const client = new ApolloClient({
+  networkInterface: new DDPNetworkInterface(),
+  dataIdFromObject: (result) => {
+    if (result.id && result.__typename) {
+      const dataId = result.__typename + result.id;
+      return dataId;
+    }
 
-export const client = new ApolloClient(config);
+    return null;
+  },
+});
