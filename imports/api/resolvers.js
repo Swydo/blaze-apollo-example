@@ -3,19 +3,19 @@ import { swapiLoader, peopleUrl } from './swapi-loader';
 
 export const resolvers = {
   Person: {
-    _id: ({ url }) => url,
+    id: ({ url }) => url,
     name: ({ name }) => name,
     likes: ({ url }) => Likes.find({ personId: url }).count(),
     films: ({ films }) => swapiLoader.loadMany(films),
   },
 
   Film: {
-    _id: ({ url }) => url,
+    id: ({ url }) => url,
     title: ({ title }) => title,
     people: ({ characters }) => swapiLoader.loadMany(characters),
   },
 
-  RootQuery: {
+  Query: {
     person: (root, { id }) => swapiLoader.load(id),
     people: () => swapiLoader.load(peopleUrl),
   },

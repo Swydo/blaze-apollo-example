@@ -20,16 +20,16 @@ Template.peopleList.helpers({
 
 Template.personItem.events({
   click() {
-    const { _id, likes } = this.person;
+    const { id, likes } = this.person;
 
     client.mutate({
       mutation: PERSON_LIKE_MUTATION,
-      variables: { id: _id },
+      variables: { id },
       optimisticResponse: {
         __typename: 'Mutation',
         likePerson: {
           __typename: 'Person',
-          _id,
+          id,
           likes: likes + 1,
         },
       },

@@ -3,11 +3,11 @@ import gql from 'graphql-tag';
 export const PEOPLE_QUERY = gql`
 query people {
   people {
-    _id
+    id
     name
     likes
     films {
-      _id
+      id
     }
   }
 }
@@ -16,7 +16,7 @@ query people {
 export const PERSON_QUERY = gql`
 query person($personId: ID!) {
   person(id: $personId) {
-    _id
+    id
     name
     likes
   }

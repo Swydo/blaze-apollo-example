@@ -1,18 +1,18 @@
 export const typeDefs = [`
   type Person {
-    _id: ID!
+    id: ID!
     name: String!
     films: [Film]
     likes: Int
   }
 
   type Film {
-    _id: ID!
+    id: ID!
     title: String!
     people: [Person]
   }
 
-  type RootQuery {
+  type Query {
     person(id: ID!): Person
     people: [Person]
   }
@@ -22,7 +22,7 @@ export const typeDefs = [`
   }
 
   schema {
-    query: RootQuery
+    query: Query
     mutation: Mutation
   }
 `];
