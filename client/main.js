@@ -2,8 +2,11 @@ import { Template } from 'meteor/templating';
 import { setup as blazeApolloSetup } from 'meteor/swydo:blaze-apollo';
 import { client } from '../imports/apollo-client';
 
-import { PEOPLE_QUERY } from './queries';
-import { PERSON_LIKE_MUTATION } from './mutations';
+import {
+  PEOPLE_QUERY,
+  PERSON_LIKE_MUTATION,
+} from './queries';
+
 
 import './main.html';
 

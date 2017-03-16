@@ -22,3 +22,13 @@ query person($personId: ID!) {
   }
 }
 `;
+
+export const PERSON_LIKE_MUTATION = gql`
+mutation likePerson($id: ID!) {
+  likePerson(id: $id) {
+    id
+    likes
+  }
+}
+`;
+
