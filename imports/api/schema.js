@@ -21,8 +21,13 @@ export const typeDefs = [`
     likePerson(id: ID!): Person
   }
 
+  type Subscription {
+    likePerson: Person
+  }
+
   schema {
     query: Query
     mutation: Mutation
+    subscription: Subscription
   }
 `];

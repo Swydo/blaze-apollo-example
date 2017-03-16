@@ -5,14 +5,23 @@ import { client } from '../imports/apollo-client';
 import {
   PEOPLE_QUERY,
   PERSON_LIKE_MUTATION,
+  PERSON_LIKE_SUBSCRIPTION,
 } from './queries';
-
 
 import './main.html';
 
 blazeApolloSetup({ client });
 
-Template.peopleList.helpers({
+const { peopleList, personItem } = Template;
+
+// eslint-disable-next-line prefer-arrow-callback
+peopleList.onCreated(function created() {
+  this.gqlSubscribe({
+    query: PERSON_LIKE_SUBSCRIPTION,
+  });
+});
+
+peopleList.helpers({
   people() {
     return Template.instance().gqlQuery({
       query: PEOPLE_QUERY,
@@ -21,7 +30,7 @@ Template.peopleList.helpers({
   },
 });
 
-Template.personItem.events({
+personItem.events({
   click() {
     const { id, likes } = this.person;
 

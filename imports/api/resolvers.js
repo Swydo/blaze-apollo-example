@@ -1,5 +1,6 @@
 import { Likes } from '../collections';
 import { swapiLoader, peopleUrl } from './swapi-loader';
+import { pubsub } from './pubsub';
 
 export const resolvers = {
   Person: {
@@ -23,7 +24,11 @@ export const resolvers = {
   Mutation: {
     likePerson: (root, { id }) => {
       Likes.insert({ personId: id });
-      return swapiLoader.load(id);
+
+      swapiLoader.load(id).then((person) => {
+        pubsub.publish('likePerson', { likePerson: person });
+        return person;
+      });
     },
   },
 };

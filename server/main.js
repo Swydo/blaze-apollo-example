@@ -1,6 +1,8 @@
-import { createApolloServer } from 'meteor/apollo';
+import { setup } from 'meteor/swydo:ddp-apollo';
 import { makeExecutableSchema } from 'graphql-tools';
+import { SubscriptionManager } from 'graphql-subscriptions';
 
+import { pubsub } from '../imports/api/pubsub';
 import { typeDefs } from '../imports/api/schema';
 import { resolvers } from '../imports/api/resolvers';
 
@@ -9,8 +11,11 @@ const schema = makeExecutableSchema({
   resolvers,
 });
 
-createApolloServer({
+const subscriptionManager = new SubscriptionManager({
   schema,
-}, {
-  graphiql: true, // Always show graphiql
+  pubsub,
+});
+
+setup(schema, {
+  subscriptionManager,
 });

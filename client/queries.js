@@ -32,3 +32,11 @@ mutation likePerson($id: ID!) {
 }
 `;
 
+export const PERSON_LIKE_SUBSCRIPTION = gql`
+subscription {
+  likePerson {
+    id
+    likes
+  }
+}
+`;
