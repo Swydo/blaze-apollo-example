@@ -1,7 +1,9 @@
 # Blaze-Apollo example
-An example app using the swydo:blaze-apollo
+An example app using [swydo:blaze-apollo](https://github.com/Swydo/blaze-apollo)
 
-Go to the [live demo](https://blaze-apollo-example.herokuapp.com/)!
+Go to the [live demo](https://blaze-apollo-example.swydo.com/).
+
+This demonstrates Blaze with GraphQL queries, mutations and subscriptions!
 
 ## Installation
 ```
