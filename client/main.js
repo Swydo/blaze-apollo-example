@@ -23,16 +23,18 @@ peopleList.onCreated(function created() {
 
 peopleList.helpers({
   people() {
-    return Template.instance().gqlQuery({
+    const { people } = Template.instance().gqlQuery({
       query: PEOPLE_QUERY,
-      // Add any ApolloClient.watchQuery option, like pollInterval
-    }).get().people;
+    }).get();
+
+    return people && people.sort((a, b) => b.likes - a.likes);
   },
 });
 
 personItem.events({
   click() {
     const { id, likes } = this.person;
+    const newLikes = likes + 1;
 
     client.mutate({
       mutation: PERSON_LIKE_MUTATION,
@@ -42,7 +44,7 @@ personItem.events({
         likePerson: {
           __typename: 'Person',
           id,
-          likes: likes + 1,
+          likes: newLikes,
         },
       },
     });
