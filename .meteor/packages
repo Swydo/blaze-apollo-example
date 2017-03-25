@@ -24,3 +24,6 @@ swydo:blaze-apollo
 
 # Using ddp-apollo for ease of use, but the normal apollo package works as well
 swydo:ddp-apollo
+
+# Add support for importing .gql files
+swydo:graphql
