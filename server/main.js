@@ -1,13 +1,14 @@
 import { setup } from 'meteor/swydo:ddp-apollo';
 import { makeExecutableSchema } from 'graphql-tools';
 import { SubscriptionManager } from 'graphql-subscriptions';
+import { print } from 'graphql/language/printer';
 
 import { pubsub } from '../imports/api/pubsub';
-import { typeDefs } from '../imports/api/schema';
+import types from '../imports/api/types.gql';
 import { resolvers } from '../imports/api/resolvers';
 
 const schema = makeExecutableSchema({
-  typeDefs,
+  typeDefs: print(types),
   resolvers,
 });
 
