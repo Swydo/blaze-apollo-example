@@ -37,6 +37,7 @@
     "request-promise-native": "^1.0.3"
   },
   "devDependencies": {
+    "@playlyfe/gql": "^2.2.1",
     "eslint": "^3.7.1",
     "eslint-config-airbnb-base": "^8.0.0",
     "eslint-plugin-import": "^1.16.0"
