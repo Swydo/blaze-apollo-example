@@ -20,6 +20,9 @@ shell-server@0.2.3            # Server-side component of the `meteor shell` comm
 
 fourseven:scss
 materialize:materialize@=0.97.6
+force-ssl
+
+# Use graphql queries in templates
 swydo:blaze-apollo
 
 # Using ddp-apollo for ease of use, but the normal apollo package works as well
