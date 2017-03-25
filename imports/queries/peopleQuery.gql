@@ -1,0 +1,10 @@
+query people {
+  people {
+    id
+    name
+    likes
+    films {
+      id
+    }
+  }
+}

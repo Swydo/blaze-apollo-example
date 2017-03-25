@@ -1,0 +1,6 @@
+subscription {
+  likePerson {
+    id
+    likes
+  }
+}

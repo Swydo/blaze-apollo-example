@@ -1,0 +1,6 @@
+mutation likePerson($id: ID!) {
+  likePerson(id: $id) {
+    id
+    likes
+  }
+}

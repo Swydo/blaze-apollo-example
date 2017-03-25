@@ -1,0 +1,7 @@
+query person($personId: ID!) {
+  person(id: $personId) {
+    id
+    name
+    likes
+  }
+}
