@@ -25,9 +25,9 @@ export const resolvers = {
     likePerson: (root, { id }) => {
       Likes.insert({ personId: id });
 
-      swapiLoader.load(id).then((person) => {
-        pubsub.publish('likePerson', { likePerson: person });
-        return person;
+      return swapiLoader.load(id).then((likePerson) => {
+        pubsub.publish('likePerson', { likePerson });
+        return likePerson;
       });
     },
   },
