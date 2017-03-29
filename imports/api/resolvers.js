@@ -1,6 +1,6 @@
 import { Likes } from '../collections';
 import { swapiLoader, peopleUrl } from './swapi-loader';
-import { pubsub } from './pubsub';
+import pubsub from './pubsub';
 
 const resolvers = {
   Person: {
