@@ -2,7 +2,7 @@ import { Likes } from '../collections';
 import { swapiLoader, peopleUrl } from './swapi-loader';
 import { pubsub } from './pubsub';
 
-export const resolvers = {
+const resolvers = {
   Person: {
     id: ({ url }) => url,
     name: ({ name }) => name,
@@ -32,3 +32,5 @@ export const resolvers = {
     },
   },
 };
+
+export default resolvers;
