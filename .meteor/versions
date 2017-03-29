@@ -63,7 +63,7 @@ standard-minifier-css@1.3.4
 standard-minifier-js@1.2.3
 swydo:blaze-apollo@0.4.0
 swydo:ddp-apollo@0.3.0
-swydo:graphql@0.0.1
+swydo:graphql@0.0.2
 templating@1.3.0
 templating-compiler@1.3.0
 templating-runtime@1.3.0
