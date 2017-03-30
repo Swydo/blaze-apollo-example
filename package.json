@@ -26,13 +26,12 @@
   "dependencies": {
     "apollo-client": "1.0.0-rc.8",
     "babel-runtime": "^6.23.0",
-    "body-parser": "^1.15.2",
     "dataloader": "^1.2.0",
     "graphql": "^0.9.1",
     "graphql-server-core": "^0.6.0",
     "graphql-subscriptions": "^0.3.0",
     "graphql-tools": "0.11.0",
-    "request": "^2.75.0",
+    "request": "^2.81.0",
     "request-promise-native": "^1.0.3"
   },
   "devDependencies": {
