@@ -10,16 +10,16 @@ import './main.html';
 
 blazeApolloSetup({ client });
 
-const { peopleList, personItem } = Template;
+const { PeopleList, PersonItem } = Template;
 
 // eslint-disable-next-line prefer-arrow-callback
-peopleList.onCreated(function created() {
+PeopleList.onCreated(function created() {
   this.gqlSubscribe({
     query: PERSON_LIKE_SUBSCRIPTION,
   });
 });
 
-peopleList.helpers({
+PeopleList.helpers({
   people() {
     const { people } = Template.instance().gqlQuery({
       query: PEOPLE_QUERY,
@@ -29,7 +29,7 @@ peopleList.helpers({
   },
 });
 
-personItem.events({
+PersonItem.events({
   click() {
     const { id, likes } = this.person;
     const newLikes = likes + 1;

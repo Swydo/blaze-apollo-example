@@ -5,16 +5,16 @@
 <body>
   <div class="container">
     <div class="row">
-      {{> peopleList}}
+      {{> PeopleList}}
     </div>
   </div>
 </body>
 
-<template name="peopleList">
+<template name="PeopleList">
   {{#if queriesReady}}
   <div class="collection">
     {{#each person in people}}
-      {{> personItem person=person}}
+      {{> PersonItem person=person}}
     {{/each}}
   </div>
   {{else}}
@@ -22,6 +22,6 @@
   {{/if}}
 </template>
 
-<template name="personItem">
+<template name="PersonItem">
   <a class="collection-item person-item">{{person.name}} ({{person.films.length}} films) <span class="badge">{{person.likes}} likes</span></a>
 </template>
