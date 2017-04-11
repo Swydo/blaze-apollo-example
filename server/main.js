@@ -2,7 +2,7 @@ import { setup } from 'meteor/swydo:ddp-apollo';
 import { makeExecutableSchema } from 'graphql-tools';
 import { SubscriptionManager } from 'graphql-subscriptions';
 
-import typeDefs from '../imports/api/schema.gql';
+import typeDefs from '../imports/api/schema.graphql';
 import resolvers from '../imports/api/resolvers';
 import pubsub from '../imports/api/pubsub';
 

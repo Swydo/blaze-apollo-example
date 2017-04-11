@@ -2,9 +2,9 @@ import { Template } from 'meteor/templating';
 import { setup as blazeApolloSetup } from 'meteor/swydo:blaze-apollo';
 import { client } from '../imports/apollo-client';
 
-import PEOPLE_QUERY from '../imports/queries/peopleQuery.gql';
-import PERSON_LIKE_MUTATION from '../imports/queries/likePersonMutation.gql';
-import PERSON_LIKE_SUBSCRIPTION from '../imports/queries/likePersonSubscription.gql';
+import PEOPLE_QUERY from '../imports/queries/peopleQuery.graphql';
+import PERSON_LIKE_MUTATION from '../imports/queries/likePersonMutation.graphql';
+import PERSON_LIKE_SUBSCRIPTION from '../imports/queries/likePersonSubscription.graphql';
 
 import './main.html';
 
