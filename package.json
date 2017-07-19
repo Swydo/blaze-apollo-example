@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/Swydo/blaze-apollo-example#readme",
   "dependencies": {
-    "apollo-client": "1.0.0-rc.8",
+    "apollo-client": "1.8.1",
     "babel-runtime": "^6.23.0",
     "dataloader": "^1.2.0",
     "graphql": "^0.9.1",
