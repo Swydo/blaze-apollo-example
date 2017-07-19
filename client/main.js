@@ -25,7 +25,7 @@ PeopleList.helpers({
       query: PEOPLE_QUERY,
     }).get();
 
-    return people && people.sort((a, b) => b.likes - a.likes);
+    return people && people.slice(0).sort((a, b) => b.likes - a.likes);
   },
 });
 
